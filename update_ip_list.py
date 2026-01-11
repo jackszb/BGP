@@ -3,8 +3,8 @@ import json
 import os
 import subprocess
 
-# 定义文件路径
-repo_dir = '/path/to/your/repo'  # 本地仓库路径
+# 使用 GitHub Actions 提供的默认工作目录
+repo_dir = os.getenv('GITHUB_WORKSPACE', '/home/runner/work/BGP/BGP')  # 如果没有环境变量则使用默认值
 output_dir = os.path.join(repo_dir, 'ip-set')
 
 # 确保输出目录存在
